@@ -11,14 +11,14 @@ export function HeroSection() {
       {/* ── Background Blobs ── */}
       <BackgroundBlob
         size="xl"
-        className="top-[8%]  left-[-4%]  rotate-[-15deg]"
+        className="top-[6%]  left-[14%]  rotate-[-15deg]"
       />
       <BackgroundBlob
         size="lg"
         className="top-[40%] left-[-2%]  rotate-[10deg]"
       />
       <BackgroundBlob
-        size="md"
+        size="lg"
         className="bottom-[12%] left-[6%] rotate-[-8deg]"
       />
       <BackgroundBlob
@@ -27,11 +27,11 @@ export function HeroSection() {
       />
       <BackgroundBlob
         size="lg"
-        className="top-[50%] right-[-2%] rotate-[-5deg]"
+        className="top-[50%] right-[-2%] rotate-[-15deg]"
       />
       <BackgroundBlob
-        size="lg"
-        className="bottom-[8%] right-[10%] rotate-[6deg]"
+        size="md"
+        className="bottom-[8%] right-[10%] rotate-[16deg]"
       />
 
       {/* ── Main container ── */}
@@ -51,10 +51,10 @@ export function HeroSection() {
 
             {/* CTA buttons */}
             <div className="flex flex-wrap gap-4 pt-2">
-              <button className="px-7 py-3.5 bg-[#4361EE] text-white font-semibold rounded-full hover:bg-[#3451D8] transition-colors shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4361EE] focus-visible:ring-offset-2">
+              <button className="px-7 py-3.5 bg-[#4361EE] text-white font-semibold rounded-full hover:bg-[#3451D8] transition-colors shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4361EE] focus-visible:ring-offset-2 cursor-pointer">
                 Get started free
               </button>
-              <button className="px-7 py-3.5 text-[#4361EE] dark:text-[#8B9EF8] font-semibold rounded-full border border-[#4361EE] dark:border-[#8B9EF8] hover:bg-[#4361EE]/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4361EE] focus-visible:ring-offset-2">
+              <button className="px-7 py-3.5 text-[#4361EE] dark:text-[#8B9EF8] font-semibold rounded-full border border-[#4361EE] dark:border-[#8B9EF8] hover:bg-[#4361EE]/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4361EE] focus-visible:ring-offset-2 cursor-pointer">
                 See how it works
               </button>
             </div>
@@ -66,21 +66,21 @@ export function HeroSection() {
             aria-hidden="true"
           >
             {/* Billing – top right */}
-            <div className="absolute top-[2%] right-[5%] animate-float-1">
+            <div className="absolute top-[2%] right-[5%] animate-float-1 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1.5 hover:drop-shadow-[0_8px_24px_rgba(67,97,238,0.30)]">
               <FloatingCard
                 color="blue"
-                rotation={6}
-                icon={<Receipt className="w-20 h-6" strokeWidth={1.8} />}
+                rotation={-6}
+                icon={<Receipt className="w-6 h-6" strokeWidth={1.8} />}
                 label="Billing"
                 animationDelay={0}
               />
             </div>
 
             {/* Matters – middle left */}
-            <div className="absolute top-[42%] left-[0%] animate-float-2">
+            <div className="absolute top-[22%] left-[0%] animate-float-1 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1.5 hover:drop-shadow-[0_8px_24px_rgba(234,88,12,0.30)]">
               <FloatingCard
                 color="orange"
-                rotation={-8}
+                rotation={-18}
                 icon={<Briefcase className="w-6 h-6" strokeWidth={1.8} />}
                 label="Matters"
                 animationDelay={150}
@@ -88,22 +88,22 @@ export function HeroSection() {
             </div>
 
             {/* Portal card – middle right */}
-            <div className="absolute top-[44%] right-[2%] animate-float-3">
+            <div className="absolute top-[44%] right-[2%] animate-float-3 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1.5 hover:drop-shadow-[0_8px_24px_rgba(67,97,238,0.25)]">
               <PortalCard
                 name="John Doe – Portal"
                 message="Hey! Could you please review a document for me?"
                 tag="MAT-2XXX"
                 timeAgo="2 h ago"
-                rotation={3}
+                rotation={8}
                 animationDelay={300}
               />
             </div>
 
             {/* Tasks – bottom center-left */}
-            <div className="absolute bottom-[6%] left-[18%] animate-float-1">
+            <div className="absolute bottom-[6%] left-[18%] animate-float-1 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1.5 hover:drop-shadow-[0_8px_24px_rgba(67,97,238,0.30)]">
               <FloatingCard
                 color="dark"
-                rotation={-4}
+                rotation={10}
                 icon={<CheckSquare className="w-6 h-6" strokeWidth={1.8} />}
                 label="Tasks"
                 animationDelay={200}
@@ -111,7 +111,7 @@ export function HeroSection() {
             </div>
 
             {/* Documents – bottom right */}
-            <div className="absolute bottom-[2%] right-[2%] animate-float-2">
+            <div className="absolute bottom-[2%] right-[2%] animate-float-2 cursor-pointer transition-all duration-300 hover:scale-105 hover:-translate-y-1.5 hover:drop-shadow-[0_8px_24px_rgba(67,97,238,0.30)]">
               <FloatingCard
                 color="dark"
                 rotation={-10}
@@ -149,7 +149,9 @@ export function HeroSection() {
                 icon: <FileText className="w-5 h-5" />,
               },
             ].map((card) => (
-              <FloatingCard key={card.label} {...card} rotation={0} />
+              <div key={card.label} className="cursor-pointer">
+                <FloatingCard {...card} rotation={0} />
+              </div>
             ))}
           </div>
         </div>

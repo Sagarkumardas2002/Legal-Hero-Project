@@ -19,8 +19,8 @@ interface FloatingCardProps {
 const colorMap: Record<CardColor, string> = {
   blue: "bg-[#4361EE] text-white",
   orange: "bg-[#D4612A] text-white",
-  dark: "bg-[#1E1B2E] text-white dark:bg-[#1E1B2E]",
-  light: "bg-[#C7CBF5] text-[#3D3A6B]",
+  dark: "bg-[#1E1B2E] text-white dark:bg-[#1E1B2M]",
+  light: "bg-[#C9CBF5] text-[#3D3A6B]",
 };
 
 export function FloatingCard({
@@ -41,7 +41,7 @@ export function FloatingCard({
       <div
         className={cn(
           "inline-flex items-center gap-3 px-5 py-3.5 rounded-full shadow-lg",
-          "transition-[filter,scale] duration-300 hover:scale-105",
+          "transition-[filter,scale] duration-400 hover:scale-105",
           "floating-card select-none cursor-default",
           colorMap[color],
           className,
