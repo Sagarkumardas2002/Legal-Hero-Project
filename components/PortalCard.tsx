@@ -24,10 +24,13 @@ export function PortalCard({
   return (
     <div
       className={cn(
-        "flex items-center gap-3 px-4 py-3 rounded-2xl shadow-lg",
-        "bg-[#DDE0F7] dark:bg-[#002517]",
-        "transition-transform duration-300 hover:scale-105",
-        "floating-card select-none cursor-default min-w-[220px]",
+        // Same capsule dimensions as FloatingCard
+        "inline-flex items-center gap-3",
+        "w-[248px] h-[68px] px-4",
+        "rounded-full shadow-lg",
+        "bg-[#DDE0F7] dark:bg-[#1E2340]",
+        "select-none cursor-pointer",
+        "transition-[filter] duration-300 hover:brightness-[1.03]",
         className,
       )}
       style={{
@@ -35,27 +38,24 @@ export function PortalCard({
         animationDelay: `${animationDelay}ms`,
       }}
     >
-      {/* Left accent bar */}
-      <div className="w-1 h-10 rounded-full bg-[#4361EE] shrink-0" />
-
       {/* Avatar */}
-      <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 bg-[#4361EE] flex items-center justify-center">
-        <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-          <circle cx="20" cy="20" r="20" fill="#4A56C1" />
-          <circle cx="20" cy="15" r="7" fill="#7B8FE8" />
-          <ellipse cx="20" cy="35" rx="12" ry="9" fill="#7B8FE8" />
+      <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 bg-[#4A56C1]">
+        <svg viewBox="0 0 36 36" fill="none" className="w-9 h-9">
+          <circle cx="18" cy="18" r="18" fill="#4A56C1" />
+          <circle cx="18" cy="13" r="6" fill="#7B8FE8" />
+          <ellipse cx="18" cy="31" rx="11" ry="8" fill="#7B8FE8" />
         </svg>
       </div>
 
-      {/* Text content */}
-      <div className="min-w-0">
-        <p className="text-sm font-semibold text-[#2D2A5E] dark:text-[#C5C8F0] truncate">
+      {/* Text — truncated to fit the pill */}
+      <div className="min-w-0 flex-1">
+        <p className="text-[12px] font-bold text-[#2D2A5E] dark:text-[#C5C8F0] truncate leading-tight">
           {name}
         </p>
-        <p className="text-xs text-[#5A5785] dark:text-[#8E8CC0] leading-tight mt-0.5">
+        <p className="text-[10px] text-[#4e45d5] dark:text-[#20c291] truncate leading-tight mt-0.5">
           {message}
         </p>
-        <p className="text-[10px] text-[#7A78A8] dark:text-[#6A68A0] mt-1">
+        <p className="text-[9px] text-[#26243f] dark:text-[#cecddf] mt-0.5">
           {tag} · {timeAgo}
         </p>
       </div>
