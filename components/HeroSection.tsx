@@ -193,7 +193,7 @@ export function HeroSection() {
               className="top-[22%] left-[0%]"
             >
               <PortalCard
-                name="John Doe – Portal"
+                name="Sagar Das – Portal"
                 message="Could you review a document?"
                 tag="MAT-2XXX"
                 timeAgo="2 h ago"
